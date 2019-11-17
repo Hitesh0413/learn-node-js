@@ -1,2 +1,2 @@
-const fs = require('fs');
-fs.writeFileSync('notes.txt','Welcome To The World Of Cryonicx !');
+const chalk = require('chalk')
+console.log(chalk.blue.inverse.bold('Success!'))
