@@ -4,12 +4,14 @@ const geocode = require('./geocode')
 const forecast = require('./forecast')
 const hbs = require('hbs')
 
+
 // ANCHOR setting paths for express server
 const publicDirPath = path.join(__dirname,'../public')
 const templateDirPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(templateDirPath, '../partials')
 
 app = express()
+const port = process.env.PORT || 3000
 app.use(express.static(publicDirPath))
 app.set('view engine', 'hbs')
 app.set('views', templateDirPath)
@@ -72,8 +74,8 @@ app.get('/*',(req,res) => {
 })
 
 
-app.listen('3000',()=> {
-    console.log('Server Started at port 3000')
+app.listen(port,()=> {
+    console.log('Server Started at port '+port+'')
 })
 
 

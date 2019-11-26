@@ -6,7 +6,7 @@ const dataWeather = document.querySelector('#data-weather')
 weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault()
     let search = query.value
-    fetch('http://localhost:3000/weather?search=' + search).then((response) => {
+    fetch('/weather?search=' + search).then((response) => {
 
        response.json().then((data) => {
           
